@@ -1573,6 +1573,7 @@ void ofdmframesync_execute_S0a(ofdmframesync _q);
 void ofdmframesync_execute_S0b(ofdmframesync _q);
 void ofdmframesync_execute_S1( ofdmframesync _q);
 void ofdmframesync_execute_rxsymbols(ofdmframesync _q);
+void ofdmframesync_execute_rxsymbols_nopilot(ofdmframesync _q);
 
 void ofdmframesync_S0_metrics(ofdmframesync _q,
                               float complex * _G,
@@ -1608,6 +1609,9 @@ void ofdmframesync_estimate_eqgain_poly(ofdmframesync _q,
 
 // recover symbol, correcting for gain, pilot phase, etc.
 void ofdmframesync_rxsymbol(ofdmframesync _q);
+
+// recover symbol, correcting for gain, pilot phase, etc.
+void ofdmframesync_rxsymbol_nopilot(ofdmframesync _q);
 
 // 
 // MODULE : nco (numerically-controlled oscillator)

@@ -7648,6 +7648,11 @@ void ofdmframegen_writesymbol(ofdmframegen _q,
                               liquid_float_complex * _x,
                               liquid_float_complex *_y);
 
+// write data symbol, considering pilot allocation as data subcarriers
+void ofdmframegen_writesymbol_nopilot(ofdmframegen _q,
+                              liquid_float_complex * _x,
+                              liquid_float_complex *_y);
+
 // write tail
 void ofdmframegen_writetail(ofdmframegen _q,
                             liquid_float_complex * _x);
@@ -7679,6 +7684,9 @@ void ofdmframesync_print(ofdmframesync _q);
 void ofdmframesync_reset(ofdmframesync _q);
 int  ofdmframesync_is_frame_open(ofdmframesync _q);
 void ofdmframesync_execute(ofdmframesync _q,
+                           liquid_float_complex * _x,
+                           unsigned int _n);
+void ofdmframesync_execute_nopilot(ofdmframesync _q,
                            liquid_float_complex * _x,
                            unsigned int _n);
 

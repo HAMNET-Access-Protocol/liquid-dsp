@@ -589,7 +589,17 @@ void CHANNEL(_add_carrier_offset)(CHANNEL() _q,                             \
 void CHANNEL(_add_multipath)(CHANNEL()    _q,                               \
                              TC *         _h,                               \
                              unsigned int _h_len);                          \
-                                                                            \
+                             	 	 	 	 	 	 	 	 	 	 	 	\
+/* Include multi-path channel impairment                                */  \
+/*  _q          : channel object                                        */  \
+/*  _M          : number of scattering components		                */  \
+/*  _fd		    : doppler shift	in Hz					                */  \
+/*  _R		    : sampling rate							                */  \
+void CHANNEL(_add_rayleigh_flat)(CHANNEL()    _q,                           \
+                                 unsigned int _fd,                          \
+								 unsigned int _R,							\
+                                 unsigned int _M);			                \
+                             	 	 	 	 	 	 	 	 	 	 	 	\
 /* Include slowly-varying shadowing impairment                          */  \
 /*  _q          : channel object                                        */  \
 /*  _sigma      : standard deviation for log-normal shadowing           */  \
